@@ -34,7 +34,7 @@ namespace NBlog.Web.Controllers
             }
 
             var html = String.Empty;
-            if((bool)entry.IsFromGithub)
+            if(entry.IsFromGithub == null || !(bool)entry.IsFromGithub)
             {
                 var markdown = new MarkdownSharp.Markdown();
                 html = markdown.Transform(entry.Markdown);
@@ -49,8 +49,9 @@ namespace NBlog.Web.Controllers
                     html = reader.ReadToEnd();
                 }
                 Dictionary<string, string> json = new JavaScriptSerializer().Deserialize<Dictionary<string,string>>(html);
+                
                 var markdown = new MarkdownSharp.Markdown();
-                html = markdown.Transform(entry.Markdown);
+                html = markdown.Transform(json["Markdown"]);
             }
 
             var model = new ShowModel
