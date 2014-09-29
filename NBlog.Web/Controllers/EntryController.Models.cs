@@ -31,6 +31,9 @@ namespace NBlog.Web.Controllers
             [DisplayName("Published")]
             public bool IsPublished { get; set; }
 
+            [DisplayName("Github")]
+            public bool IsFromGithub { get; set; }
+            
             [DisplayName("Enable code syntax highlighting")]
             public bool IsCodePrettified { get; set; }
         }

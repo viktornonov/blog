@@ -27,6 +27,7 @@ namespace NBlog.Web.Controllers
                         Key = e.Slug,
                         Title = e.Title,
                         Date = e.DateCreated.ToDateString(),
+                        IsFromGithub = e.IsFromGithub,
                         PrettyDate = e.DateCreated.ToPrettyDate(),
                         IsPublished = e.IsPublished ?? true
                     })

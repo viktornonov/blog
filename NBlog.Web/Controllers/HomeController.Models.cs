@@ -19,6 +19,7 @@ namespace NBlog.Web.Controllers
             public string Key { get; set; }
             public string Title { get; set; }
             public string Date{ get; set; }
+            public bool? IsFromGithub { get; set; }
             public string PrettyDate { get; set; }
             public bool IsPublished { get; set; }
         }

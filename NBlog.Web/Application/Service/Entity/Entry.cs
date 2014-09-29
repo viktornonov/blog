@@ -11,6 +11,7 @@ namespace NBlog.Web.Application.Service.Entity
         public string Title { get; set; }
         public string Author { get; set; }
         public DateTime DateCreated { get; set; }
+        public bool? IsFromGithub { get; set; }
         public string Markdown { get; set; }
         public bool? IsPublished { get; set; }
         public bool? IsCodePrettified { get; set; }

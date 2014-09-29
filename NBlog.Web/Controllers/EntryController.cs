@@ -2,9 +2,14 @@
 using NBlog.Web.Application.Service;
 using NBlog.Web.Application.Service.Entity;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace NBlog.Web.Controllers
 {
@@ -28,8 +33,25 @@ namespace NBlog.Web.Controllers
                 throw new HttpException(404, "Entry not found", ex);
             }
 
-            var markdown = new MarkdownSharp.Markdown();
-            var html = markdown.Transform(entry.Markdown);
+            var html = String.Empty;
+            if((bool)entry.IsFromGithub)
+            {
+                var markdown = new MarkdownSharp.Markdown();
+                html = markdown.Transform(entry.Markdown);
+            }
+            else
+            {
+                // TODO: Extract to another method
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/viktornonov/blog/master/NBlog.Web/App_Data/localhost/Entry/" + slug + ".json");
+                request.Method = "GET";
+                using (var reader = new StreamReader(request.GetResponse().GetResponseStream()))
+                {
+                    html = reader.ReadToEnd();
+                }
+                Dictionary<string, string> json = new JavaScriptSerializer().Deserialize<Dictionary<string,string>>(html);
+                var markdown = new MarkdownSharp.Markdown();
+                html = markdown.Transform(entry.Markdown);
+            }
 
             var model = new ShowModel
             {

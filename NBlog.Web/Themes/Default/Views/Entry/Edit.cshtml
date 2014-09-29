@@ -53,6 +53,12 @@
         </div>
         
         <div class="field">
+            @Html.LabelFor(m => m.IsFromGithub)<br />
+            @Html.RadioButtonFor(m => m.IsFromGithub, true) Yes<br />
+            @Html.RadioButtonFor(m => m.IsFromGithub, false) No<br />
+        </div>
+        
+        <div class="field">
             <input type="submit" value="Save" />
             @Html.ActionLink("< Back", "Index", "Home", null, new { @class = "button" })
         </div>
