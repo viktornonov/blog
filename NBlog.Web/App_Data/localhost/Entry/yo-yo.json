@@ -3,7 +3,7 @@
   "Title": "Hello",
   "Author": "vnonov.myopenid.com",
   "DateCreated": "2014-01-18T00:00:00",
-  "Markdown": "    def first_post\r\n      puts \"do you feel the pain?\"\r\n    end\r\n\r\n",
+  "Markdown": "    def first_post\r\n      puts \"comes from github\"\r\n    end\r\n\r\n",
   "IsFromGithub": true,
   "IsPublished": true,
   "IsCodePrettified": true
