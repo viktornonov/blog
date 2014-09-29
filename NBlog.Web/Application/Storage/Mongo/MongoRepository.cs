@@ -29,8 +29,10 @@ namespace NBlog.Web.Application.Storage.Mongo
         public TEntity Single<TEntity>(object key) where TEntity : class, new()
         {
             var collection = GetCollection<TEntity>();
+            MongoCollection posts = _db.GetCollection("posts");
             var query = new QueryDocument("_id", BsonValue.Create(key));
-            var entity = collection.FindOneAs<TEntity>(query);
+            var entity = posts.FindOneAs<TEntity>(query);
+            //var entity = collection.FindOneAs<TEntity>(query);
 
             if (entity == null)
                 throw new NullReferenceException("Document with key '" + key + "' not found.");
@@ -68,7 +70,8 @@ namespace NBlog.Web.Application.Storage.Mongo
 
         private MongoCollection GetCollection<TEntity>()
         {
-            return _db.GetCollection(typeof(TEntity).Name);
+            //return _db.GetCollection(typeof(TEntity).Name);
+            return _db.GetCollection("posts");
         }
     }
 }
