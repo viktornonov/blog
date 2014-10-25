@@ -52,6 +52,7 @@ namespace NBlog.Web.Controllers
                 
                 var markdown = new MarkdownSharp.Markdown();
                 html = markdown.Transform(json["Markdown"]);
+                html = html.Replace("<code>", "<code class='language-ruby'>");
             }
 
             var model = new ShowModel

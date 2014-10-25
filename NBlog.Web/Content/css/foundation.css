@@ -3515,6 +3515,7 @@ small {
   line-height: inherit; }
 
 code {
+    /* Comment that because adding Prism
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: normal;
   color: #333333;
@@ -3522,7 +3523,7 @@ code {
   border-width: 1px;
   border-style: solid;
   border-color: #dfdfdf;
-  padding: 0.125rem 0.3125rem 0.0625rem; }
+  padding: 0.125rem 0.3125rem 0.0625rem; */}
 
 /* Lists */
 ul,

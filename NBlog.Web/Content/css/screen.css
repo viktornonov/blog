@@ -1,0 +1,22 @@
+﻿h1 {
+    font-family: "kepler-std-semicondensed-dis";
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+div > p {
+    font-family: "Lora, Georgia, serif";
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+.post-date {
+    text-align: center;
+    font-family: Georgia;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #808080; 
+    font-size: 18px;
+}
+.topbar {
+    margin-top: 15px;
+}
