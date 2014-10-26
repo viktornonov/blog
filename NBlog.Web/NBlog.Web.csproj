@@ -273,7 +273,12 @@
   <ItemGroup>
     <Content Include="Content\css\foundation.css" />
     <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\css\prism.css" />
     <Content Include="Content\css\screen.css" />
+    <Content Include="Content\img\github.png" />
+    <Content Include="Content\img\instagram.png" />
+    <Content Include="Content\img\linkedin.png" />
+    <Content Include="Content\img\twitter.png" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\Fancybox\blank.gif" />
@@ -367,6 +372,7 @@
     <Content Include="Scripts\Prettify\lang-yaml.js" />
     <Content Include="Scripts\Prettify\prettify.css" />
     <Content Include="Scripts\Prettify\prettify.js" />
+    <Content Include="Scripts\prism.js" />
     <Content Include="Scripts\Profiling\charts.swf" />
     <Content Include="Scripts\Profiling\config.js" />
     <Content Include="Scripts\Profiling\yahoo-profiling.css" />
@@ -464,9 +470,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\img\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
