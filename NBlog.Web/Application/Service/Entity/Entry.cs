@@ -1,6 +1,5 @@
 ﻿using System;
 using MongoDB.Bson.Serialization.Attributes;
-using PetaPoco;
 
 namespace NBlog.Web.Application.Service.Entity
 {

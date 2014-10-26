@@ -6,10 +6,7 @@ using NBlog.Web.Application.Service;
 using NBlog.Web.Application.Service.Entity;
 using NBlog.Web.Application.Service.Internal;
 using NBlog.Web.Application.Storage;
-using NBlog.Web.Application.Storage.Azure;
 using NBlog.Web.Application.Storage.Json;
-using NBlog.Web.Application.Storage.Mongo;
-using NBlog.Web.Application.Storage.Sql;
 using Quartz;
 using Quartz.Impl;
 using System.Linq;
@@ -71,6 +68,8 @@ namespace NBlog.Web
                 new NamedParameter("tenantSelector", new HttpTenantSelector())
             });
 
+
+            /*
             builder.RegisterType<SqlRepository>().Named<IRepository>("sql").InstancePerLifetimeScope().WithParameters(new[] {
                 new NamedParameter("keys", repositoryKeys),
                 new NamedParameter("connectionString", "Server=.;Trusted_Connection=True;"),
@@ -82,7 +81,6 @@ namespace NBlog.Web
                 new NamedParameter("connectionString", "mongodb://localhost"),
                 new NamedParameter("databaseName", "nblog")
             });
-            /*
             builder.RegisterType<AzureBlobRepository>().Named<IRepository>("azure").InstancePerHttpRequest().WithParameters(new[] {
                 new NamedParameter("keys", repositoryKeys),
                 new NamedParameter("tenantSelector", new HttpTenantSelector())
