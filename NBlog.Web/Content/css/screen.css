@@ -4,11 +4,46 @@
     text-align: center;
     margin-bottom: 0px;
 }
-div > p {
+
+h3 {
+    font-family: "kepler-std-semicondensed-dis";
+}
+.post-body {
     font-family: "Lora, Georgia, serif";
     font-size: 21px;
     letter-spacing: 1px;
 }
+
+.post-body ul, .post-body p {
+    font-size: 21px;
+}
+
+.post-body ul {
+    list-style: circle;
+}
+
+pre {
+    font-size: 16px;
+    letter-spacing: 0px;
+}
+
+a {
+    color: #000;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.main-page-date {
+    line-height: 38px;
+}
+
 .post-date {
     text-align: center;
     font-family: Georgia;
@@ -19,4 +54,8 @@ div > p {
 }
 .topbar {
     margin-top: 15px;
+}
+
+.offset-bottom {
+    margin-bottom: 25px;
 }
