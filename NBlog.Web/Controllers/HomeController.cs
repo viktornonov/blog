@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using NBlog.Web.Application;
 using NBlog.Web.Application.Infrastructure;
 using NBlog.Web.Application.Service;
+using NBlog.Web.Application.Service.Entity;
 
 namespace NBlog.Web.Controllers
 {
@@ -22,14 +23,14 @@ namespace NBlog.Web.Controllers
             {
                 Entries = entries
                     .OrderByDescending(e => e.DateCreated)
-                    .Select(e => new EntrySummaryModel
+                    .Select(e => new Entry
                     {
-                        Key = e.Slug,
+                        Slug = e.Slug,
+                        Markdown = e.HtmlByMarkdown,
                         Title = e.Title,
-                        Date = e.DateCreated.ToDateString(),
                         IsFromGithub = e.IsFromGithub,
-                        PrettyDate = e.DateCreated.ToPrettyDate(),
-                        IsPublished = e.IsPublished ?? true
+                        DateCreated = e.DateCreated,
+                        IsPublished = e.IsPublished
                     })
             };
 
@@ -52,6 +53,11 @@ namespace NBlog.Web.Controllers
         public ActionResult WhatTimeIsIt()
         {
             return Content(DateTime.Now.ToString());
+        }
+        
+        public class IndexModel : LayoutModel
+        {
+            public IEnumerable<Entry> Entries { get; set; }
         }
     }
 }

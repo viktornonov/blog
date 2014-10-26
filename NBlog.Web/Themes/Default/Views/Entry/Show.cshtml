@@ -3,7 +3,7 @@
     ViewBag.Title = Model.Title + " | " + Model.Config.Heading;
 }
 
-<article class="entry">
+<article class="post">
     @if (Model.User.IsAdmin)
     {
         <div class="admin-box text-links">
@@ -15,17 +15,13 @@
     
     <h1>@Model.Title</h1>
     
-    <div class="text-links">
-        @Html.Safe(@Model.Html)
-    </div>
-
-    <div class="entry-date">
+    <div class="post-date">
         @Model.Date
     </div>
 
-    <p>
-        @Html.ActionLink("Read more posts »", "Index", "Home")
-    </p>
+    <div class="post-body">
+        @Html.Safe(@Model.Html)
+    </div>
 
     @if (!string.IsNullOrWhiteSpace(@Model.Config.Disqus.Shortname))
     {

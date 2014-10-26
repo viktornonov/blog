@@ -1,5 +1,4 @@
 ﻿@model HomeController.IndexModel
-<article>
 
     @if (Model.User.IsAdmin)
     {
@@ -9,19 +8,19 @@
         </div>
     }
 
-    <h1>Latest Posts</h1>
+    <article class="post">
+    <h1 class="offset-bottom">Viktor's Posts</h1>
         
-    <ul class="entry-list text-links">
     @foreach (var entry in Model.Entries)
     {
         if (!Model.User.IsAdmin && !entry.IsPublished) { continue; }
-        
-        <li>
-            @Html.ActionLink(entry.Title, "Show", "Entry", new { id = entry.Key }, null)
-            <div class="date">@entry.Date</div>
-            @if (!entry.IsPublished) { <div class="publication-status">(Unpublished)</div> }
-        </li>
+        <div class="row">
+            <div class="columns">
+                <h3 class="left">@Html.ActionLink(entry.Title, "Show", "Entry", new { id = entry.Slug }, null)</h3>
+                <div class="right post-date main-page-date">
+                    @entry.DateCreated.ToPrettyDate()
+                </div>
+            </div>
+        </div>
     }
-    </ul>
-
-</article>
+    </article>

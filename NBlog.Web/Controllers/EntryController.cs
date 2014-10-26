@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -33,31 +34,11 @@ namespace NBlog.Web.Controllers
                 throw new HttpException(404, "Entry not found", ex);
             }
 
-            var html = String.Empty;
-            if(entry.IsFromGithub == null || !(bool)entry.IsFromGithub)
-            {
-                var markdown = new MarkdownSharp.Markdown();
-                html = markdown.Transform(entry.Markdown);
-            }
-            else
-            {
-                // TODO: Extract to another method
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/viktornonov/blog/master/NBlog.Web/App_Data/localhost/Entry/" + slug + ".json");
-                request.Method = "GET";
-                using (var reader = new StreamReader(request.GetResponse().GetResponseStream()))
-                {
-                    html = reader.ReadToEnd();
-                }
-                Dictionary<string, string> json = new JavaScriptSerializer().Deserialize<Dictionary<string,string>>(html);
-                
-                var markdown = new MarkdownSharp.Markdown();
-                html = markdown.Transform(json["Markdown"]);
-                html = html.Replace("<code>", "<code class='language-ruby'>");
-            }
+            var html = entry.HtmlByMarkdown;
 
             var model = new ShowModel
             {
-                Date = entry.DateCreated.ToString("dddd, dd MMMM yyyy"),
+                Date = entry.DateCreated.ToString("MMMM dd, yyyy"),
                 Slug = entry.Slug,
                 Title = entry.Title,
                 Html = html,
@@ -122,7 +103,7 @@ namespace NBlog.Web.Controllers
                 Markdown = entry.Markdown,
                 Slug = slug,
                 NewSlug = slug,
-                IsPublished = entry.IsPublished ?? true,
+                IsPublished = entry.IsPublished,
                 IsCodePrettified = entry.IsCodePrettified ?? true
             };
 

@@ -1,34 +1,32 @@
-﻿using System;
+﻿using NBlog.Web.Application.Infrastructure;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net;
 using System.Web;
-using NBlog.Web.Application.Infrastructure;
-using NBlog.Web.Application.Service.Entity;
-using Newtonsoft.Json;
 
-namespace NBlog.Web.Application.Storage.Json
+namespace NBlog.Web.Application.Storage.Github
 {
-    public class JsonRepository : IRepository
+    public class GithubRepository
     {
         private readonly RepositoryKeys _keys;
         private readonly HttpTenantSelector _tenantSelector;
-
 
         public string DataPath
         {
             get
             {
-                return HttpContext.Current.Server.MapPath("~/App_Data/" + _tenantSelector.Name);
+                return "https://raw.githubusercontent.com/viktornonov/blog/master/NBlog.Web/App_Data/localhost/Entry/";
             }
         }
 
-
-        public JsonRepository(RepositoryKeys keys, HttpTenantSelector tenantSelector)
+        public GithubRepository(RepositoryKeys keys, HttpTenantSelector tenantSelector)
         {
             _keys = keys;
             _tenantSelector = tenantSelector;
         }
-
 
         public TEntity Single<TEntity>(object key) where TEntity : class, new()
         {
@@ -36,10 +34,14 @@ namespace NBlog.Web.Application.Storage.Json
             var recordPath = Path.Combine(DataPath, typeof(TEntity).Name, filename + ".json");
             var json = File.ReadAllText(recordPath);
             var item = JsonConvert.DeserializeObject<TEntity>(json);
-            
+            /*HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/viktornonov/blog/master/NBlog.Web/App_Data/localhost/Entry/" + slug + ".json");
+            request.Method = "GET";
+            using (var reader = new StreamReader(request.GetResponse().GetResponseStream()))
+            {
+                html = reader.ReadToEnd();
+            }*/
             return item;
         }
-
 
         public IEnumerable<TEntity> All<TEntity>() where TEntity : class, new()
         {

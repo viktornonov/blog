@@ -26,7 +26,7 @@ namespace NBlog.Web.Controllers
             
             var entries =
                 _services.Entry.GetList()
-                .Where(e => e.IsPublished ?? true)
+                .Where(e => e.IsPublished)
                 .OrderByDescending(e => e.DateCreated)
                 .Take(10)
                 .Select(e => new SyndicationItem(
