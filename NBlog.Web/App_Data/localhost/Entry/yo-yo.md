@@ -8,6 +8,6 @@
 
 * one two
 
-    def first_post
-		puts "comes from github in markdown"
-    end
+        def first_post
+            puts "comes from github in markdown"
+        end
