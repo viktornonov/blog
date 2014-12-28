@@ -8,25 +8,35 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="field short">
-            @Html.LabelFor(m => m.SenderName)<br />
-            @Html.TextBoxFor(m => m.SenderName, new { @class="text-box short" })
-            @Html.ValidationMessageFor(m => m.SenderName)
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelFor(m => m.SenderName)<br />
+                @Html.TextBoxFor(m => m.SenderName, new { @class="text-box short" })
+                @Html.ValidationMessageFor(m => m.SenderName)
+            </div>
         </div>
         
-        <div class="field short">
-            @Html.LabelFor(m => m.SenderEmail)<br />
-            @Html.TextBoxFor(m => m.SenderEmail, new { @class="text-box short" })
-            @Html.ValidationMessageFor(m => m.SenderEmail)
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelFor(m => m.SenderEmail)<br />
+                @Html.TextBoxFor(m => m.SenderEmail, new { @class="text-box short" })
+                @Html.ValidationMessageFor(m => m.SenderEmail)
+            </div>
         </div>
 
-        <div class="field medium">
-            @Html.LabelFor(m => m.Message)<br />
-            @Html.TextAreaFor(m => m.Message, new { @class = "text-box small" })
-            @Html.ValidationMessageFor(m => m.Message)
+        <div class="row offset-bottom">
+            <div class="large-12 columns">
+                @Html.LabelFor(m => m.Message)<br />
+                @Html.TextAreaFor(m => m.Message, new { @class = "text-box small" })
+                @Html.ValidationMessageFor(m => m.Message)
+            </div>
         </div>
 
-        <input type="submit" value="Send" />
+        <div class="row">
+            <div class="small-3 large-centered columns">
+                <input type="submit" value="Send" class="button large"/>
+            </div>
+        </div>
     }
 
 </article>

@@ -6,7 +6,7 @@ namespace NBlog.Web.Application.Service.Internal
     {
         public void SendEmail(MailMessage mailMessage)
         {
-            new SmtpClient().Send(mailMessage);
+            new SmtpClient("nonov.net", 25).Send(mailMessage);
         }
     }
 }

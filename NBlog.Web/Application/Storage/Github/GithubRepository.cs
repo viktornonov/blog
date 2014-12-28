@@ -32,12 +32,7 @@ namespace NBlog.Web.Application.Storage.Github
             var recordPath = Path.Combine(DataPath, typeof(TEntity).Name, filename + ".json");
             var json = File.ReadAllText(recordPath);
             var item = JsonConvert.DeserializeObject<TEntity>(json);
-            /*HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/viktornonov/blog/master/NBlog.Web/App_Data/localhost/Entry/" + slug + ".json");
-            request.Method = "GET";
-            using (var reader = new StreamReader(request.GetResponse().GetResponseStream()))
-            {
-                html = reader.ReadToEnd();
-            }*/
+
             return item;
         }
 

@@ -28,7 +28,6 @@ namespace NBlog.Web
             // replace the default FilterAttributeFilterProvider with one that has Autofac property
             // injection
             FilterProviders.Providers.Remove(FilterProviders.Providers.Single(f => f is FilterAttributeFilterProvider));
-//            FilterProviders.Providers.Add(new AutofacFilterProvider());
 
             InitialiseJobScheduler(container);
         }
@@ -54,44 +53,17 @@ namespace NBlog.Web
         {
             var builder = new ContainerBuilder();
 
-            /*
-            builder.RegisterType<ThemeableRazorViewEngine>().As<IViewEngine>().InstancePerLifetimeScope().WithParameter(
-                new NamedParameter("tenantSelector", new HttpTenantSelector())
-            );
-            */
-
             var repositoryKeys = new RepositoryKeys();
             repositoryKeys.Add<Entry>(e => e.Slug);
             repositoryKeys.Add<Config>(c => c.Site);
             repositoryKeys.Add<User>(u => u.Username);
 
             builder.RegisterType<JsonRepository>().Named<IRepository>("json").InstancePerLifetimeScope().WithParameters(new[] {
-                new NamedParameter("keys", repositoryKeys)/*,
-                new NamedParameter("tenantSelector", new HttpTenantSelector())*/
+                new NamedParameter("keys", repositoryKeys)
             });
 
-
-            /*
-            builder.RegisterType<SqlRepository>().Named<IRepository>("sql").InstancePerLifetimeScope().WithParameters(new[] {
-                new NamedParameter("keys", repositoryKeys),
-                new NamedParameter("connectionString", "Server=.;Trusted_Connection=True;"),
-                new NamedParameter("databaseName", "NBlog")
-            });
-
-            builder.RegisterType<MongoRepository>().Named<IRepository>("mongo").InstancePerLifetimeScope().WithParameters(new[] {
-                new NamedParameter("keys", repositoryKeys),
-                new NamedParameter("connectionString", "mongodb://localhost"),
-                new NamedParameter("databaseName", "nblog")
-            });
-            builder.RegisterType<AzureBlobRepository>().Named<IRepository>("azure").InstancePerHttpRequest().WithParameters(new[] {
-                new NamedParameter("keys", repositoryKeys),
-                new NamedParameter("tenantSelector", new HttpTenantSelector())
-            });
-
-            */
             builder.RegisterControllers(typeof(ContainerConfig).Assembly)
                 .WithParameter(GetResolvedParameterByName<IRepository>(DefaultRepositoryName));
-/*            builder.RegisterModelBinders(Assembly.GetExecutingAssembly()); */
 
             builder.RegisterType<ConfigService>().As<IConfigService>().InstancePerLifetimeScope()
                 .WithParameter(GetResolvedParameterByName<IRepository>(DefaultRepositoryName));
@@ -101,8 +73,6 @@ namespace NBlog.Web
 
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
             builder.RegisterType<MessageService>().As<IMessageService>().InstancePerLifetimeScope();
-            //builder.RegisterType<ThemeService>().As<IThemeService>().InstancePerLifetimeScope();
-            builder.RegisterType<CloudService>().As<ICloudService>().InstancePerLifetimeScope();
             builder.RegisterType<Services>().As<IServices>().InstancePerLifetimeScope();
 
             var container = builder.Build();
