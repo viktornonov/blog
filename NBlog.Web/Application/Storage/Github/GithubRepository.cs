@@ -12,7 +12,6 @@ namespace NBlog.Web.Application.Storage.Github
     public class GithubRepository
     {
         private readonly RepositoryKeys _keys;
-        private readonly HttpTenantSelector _tenantSelector;
 
         public string DataPath
         {
@@ -22,10 +21,9 @@ namespace NBlog.Web.Application.Storage.Github
             }
         }
 
-        public GithubRepository(RepositoryKeys keys, HttpTenantSelector tenantSelector)
+        public GithubRepository(RepositoryKeys keys)
         {
             _keys = keys;
-            _tenantSelector = tenantSelector;
         }
 
         public TEntity Single<TEntity>(object key) where TEntity : class, new()

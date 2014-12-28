@@ -7,6 +7,5 @@
         IConfigService Config { get; }
         IMessageService Message { get; }
         ICloudService Cloud { get; }
-        IThemeService Theme { get; }
     }
 }

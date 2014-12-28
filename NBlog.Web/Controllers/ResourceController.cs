@@ -18,16 +18,16 @@ namespace NBlog.Web.Controllers
         [HttpGet]
         public ActionResult Favicon()
         {
-            return File(Services.Theme.Current.BasePath + "/favicon.ico", "image/x-icon");
+            return File("~/App_Data/localhost/favicon.ico", "image/x-icon");
         }
 
         [HttpGet]
         public ActionResult Css()
         {
-            var cacheKey = Services.Theme.Current.Name + "-css";
+            var cacheKey = "yo-yo-marafara-css";
 
             Bundle.Css()
-                .Add(Services.Theme.Current.Css("style"))
+                //.Add(Services.Theme.Current.Css("style"))
                 .Add("~/scripts/jqueryopenidplugin/openid.css")
                 .Add("~/scripts/wmd/wmd.css")
                 .Add("~/scripts/prettify/prettify.css")

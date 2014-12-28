@@ -34,7 +34,6 @@ namespace NBlog.Web.Application.Infrastructure
         {
             model.Config = Services.Config.Current;
             model.User = Services.User.Current;
-            model.Theme = Services.Theme.Current;
             
             //model.Base = new LayoutModel.LayoutCommonModel
             //{

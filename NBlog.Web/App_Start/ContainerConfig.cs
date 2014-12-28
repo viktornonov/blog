@@ -54,9 +54,11 @@ namespace NBlog.Web
         {
             var builder = new ContainerBuilder();
 
+            /*
             builder.RegisterType<ThemeableRazorViewEngine>().As<IViewEngine>().InstancePerLifetimeScope().WithParameter(
                 new NamedParameter("tenantSelector", new HttpTenantSelector())
             );
+            */
 
             var repositoryKeys = new RepositoryKeys();
             repositoryKeys.Add<Entry>(e => e.Slug);
@@ -64,8 +66,8 @@ namespace NBlog.Web
             repositoryKeys.Add<User>(u => u.Username);
 
             builder.RegisterType<JsonRepository>().Named<IRepository>("json").InstancePerLifetimeScope().WithParameters(new[] {
-                new NamedParameter("keys", repositoryKeys),
-                new NamedParameter("tenantSelector", new HttpTenantSelector())
+                new NamedParameter("keys", repositoryKeys)/*,
+                new NamedParameter("tenantSelector", new HttpTenantSelector())*/
             });
 
 
@@ -99,7 +101,7 @@ namespace NBlog.Web
 
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
             builder.RegisterType<MessageService>().As<IMessageService>().InstancePerLifetimeScope();
-            builder.RegisterType<ThemeService>().As<IThemeService>().InstancePerLifetimeScope();
+            //builder.RegisterType<ThemeService>().As<IThemeService>().InstancePerLifetimeScope();
             builder.RegisterType<CloudService>().As<ICloudService>().InstancePerLifetimeScope();
             builder.RegisterType<Services>().As<IServices>().InstancePerLifetimeScope();
 

@@ -4,8 +4,6 @@ using NBlog.Web.Application.Infrastructure;
 using NBlog.Web.Application.Service.Entity;
 using NBlog.Web.Application.Storage;
 using NBlog.Web.Application.Storage.Json;
-using NBlog.Web.Application.Storage.Mongo;
-using NBlog.Web.Application.Storage.Sql;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -49,26 +47,12 @@ namespace NBlog.Tests
                     Directory.Delete(JsonWorkingFolder, recursive: true);
                 }
             }
-            else if (repositoryType == typeof(SqlRepository))
-            {
-                using (var cnn = new SqlConnection(SqlConnectionString))
-                using (var cmd = new SqlCommand("EXEC sp_MSforeachtable @command1 = 'TRUNCATE TABLE ?'", cnn))
-                {
-                    cnn.Open();
-                    cnn.ChangeDatabase(SqlDatabaseName);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            else if (repositoryType == typeof(MongoRepository))
-            {
-                var server = new MongoClient(MongoConnectionString).GetServer();
-                server.DropDatabase(MongoDatabaseName);
-            }
         }
 
         [FixtureTearDown]
         public void FixtureTearDown()
         {
+            /*
             if (Instance.GetType() == typeof(SqlRepository))
             {
                 const string dropSql = @"
@@ -82,13 +66,14 @@ namespace NBlog.Tests
                     cmd.ExecuteNonQuery();
                 }
             }
+            */
         }
 
         public static IEnumerable<IRepository> GetInstances()
         {
             yield return BuildJsonRepository();
-            yield return BuildSqlRepository();
-            yield return BuildMongoRepository();
+            //yield return BuildSqlRepository();
+            //yield return BuildMongoRepository();
         }
 
         [Factory("GetInstances")]
@@ -96,17 +81,7 @@ namespace NBlog.Tests
 
         private static JsonRepository BuildJsonRepository()
         {
-            return new JsonRepository(Keys, new HttpTenantSelector());
-        }
-
-        private static SqlRepository BuildSqlRepository()
-        {
-            return new SqlRepository(Keys, SqlConnectionString, SqlDatabaseName);
-        }
-
-        private static MongoRepository BuildMongoRepository()
-        {
-            return new MongoRepository(Keys, MongoConnectionString, MongoDatabaseName);
+            return new JsonRepository(Keys);
         }
 
         [Test]

@@ -1,6 +1,7 @@
 using System;
 using NBlog.Web.Application.Service.Entity;
 
+/*
 namespace NBlog.Web.Application.Service.Internal
 {
     public class ThemeService : IThemeService
@@ -22,3 +23,4 @@ namespace NBlog.Web.Application.Service.Internal
         }
     }
 }
+*/

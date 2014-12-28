@@ -11,9 +11,6 @@ namespace NBlog.Web.Application.Infrastructure
         public User User { get; set; }
         
         [NoBinding]
-        public Theme Theme { get; set; }
-        
-        [NoBinding]
         public Config Config { get; set; }
 
         //public class LayoutCommonModel
