@@ -308,7 +308,6 @@
     <Content Include="Scripts\Fancybox\jquery.mousewheel-3.0.4.pack.js" />
     <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="App_Data\localhost\Entry\yo-yo.json" />
-    <Content Include="App_Data\localhost\Entry\yo-yo.md" />
     <None Include="Properties\PublishProfiles\ftp.nonov.net.pubxml" />
     <None Include="Properties\PublishProfiles\nonov.net.pubxml" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -401,7 +400,6 @@
     <Compile Include="Application\MarkdownSharp.cs" />
     <Compile Include="Application\Service\Entity\Config.cs" />
     <Compile Include="Application\Service\Entity\Entry.cs" />
-    <Compile Include="Application\Service\Entity\Theme.cs" />
     <Compile Include="Application\Service\Entity\User.cs" />
     <Compile Include="Application\Service\IConfigService.cs" />
     <Compile Include="Application\Service\IEntryService.cs" />
