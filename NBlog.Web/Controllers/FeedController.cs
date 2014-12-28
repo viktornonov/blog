@@ -31,7 +31,7 @@ namespace NBlog.Web.Controllers
                 .Take(10)
                 .Select(e => new SyndicationItem(
                     e.Title,
-                    markdown.Transform(UrlsToAbsolute(e.Markdown)),
+                    e.HtmlByMarkdown,
                     new Uri(baseUri, Url.Action("Show", "Entry", new { id = e.Slug }, null))));
 
             var feed = new SyndicationFeed(
