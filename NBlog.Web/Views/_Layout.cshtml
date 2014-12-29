@@ -16,7 +16,7 @@
 	<title>@(ViewBag.Title ?? Model.Config.Title)</title>
     <meta name="description" content="@Model.Config.MetaDescription">
     <link href="@Url.Action("Index", "Feed")" rel="alternate" type="application/rss+xml" title="@Model.Config.Title" />
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="@Url.Content("~/Content/img/logo.png")">
 <!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/smoothness/jquery-ui.css">
     -->
@@ -31,21 +31,18 @@
 <body>
     <header>
         <div class="row">
+            <div class="small-2 large-1 small-centered columns">
+                    <a href="@Url.Action("Index", "Home")">
+                            <img src="@Url.Content("~/Content/img/logo.png")" alt="Viktor Nonov" id="logo"/>
+                    </a>
+            </div>
+        </div>
+        <div class="row">
             <div class="small-9 small-centered columns">
-                <div class="topbar clearfix">
-                    <a href="@Url.Action("Index", "Home")" class="left">
-                            Viktor Nonov
-                    </a>
-
-                    <a href="@Url.Action("Index", "Contact")" class="right">
-                            Contact
-                    </a>
-                </div>
-                <hr>
+                <hr />
             </div>
         </div>
     </header>
-    
     <section class="main-section">
         <div class="row">
             <div class="large-9 small-11 large-centered small-centered columns">
@@ -84,8 +81,12 @@
         -->
         <div class="row">
             <div class="small-9 small-centered columns">
-                <a href="@Url.Action("Index", "Feed")" class="right">
+                <a href="@Url.Action("Index", "Feed")" class="left">
                         RSS
+                </a>
+
+                <a href="@Url.Action("Index", "Contact")" class="right">
+                        Contact
                 </a>
                 <div id="topbar">
                     <div id="links" class="text-links">

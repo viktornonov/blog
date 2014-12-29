@@ -3,6 +3,7 @@
     font-size: 50px;
     text-align: center;
     margin-bottom: 0px;
+    margin-top: 0.3em;
 }
 
 h3 {
@@ -61,4 +62,15 @@ a:hover {
 
 .offset-bottom {
     margin-bottom: 25px;
+}
+
+#logo {
+    margin-top: 1em;
+    transition: 0.5s;
+}
+
+#logo:hover {
+    opacity:0.5;
+    filter:alpha(opacity=50);
+    transition: 0.5s;
 }

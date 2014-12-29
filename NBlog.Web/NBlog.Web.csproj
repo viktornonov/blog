@@ -278,6 +278,7 @@
     <Content Include="Content\img\github.png" />
     <Content Include="Content\img\instagram.png" />
     <Content Include="Content\img\linkedin.png" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\twitter.png" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />

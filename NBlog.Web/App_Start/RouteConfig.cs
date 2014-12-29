@@ -19,9 +19,6 @@ namespace NBlog.Web
             // homepage
             routes.MapRoute("", "", new { controller = "Home", action = "Index" });
 
-            // favicon
-            routes.MapRoute("", "favicon.ico", new { controller = "Resource", action = "Favicon" });
-
             // combined scripts
             routes.MapRoute("", "min.css", new { controller = "Resource", action = "Css" });
             routes.MapRoute("", "min.js", new { controller = "Resource", action = "JavaScript" });

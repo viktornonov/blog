@@ -16,12 +16,6 @@ namespace NBlog.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Favicon()
-        {
-            return File("~/App_Data/localhost/favicon.ico", "image/x-icon");
-        }
-
-        [HttpGet]
         public ActionResult Css()
         {
             var cacheKey = "yo-yo-marafara-css";
