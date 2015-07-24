@@ -29,7 +29,8 @@ namespace NBlog.Web.Application.Storage.Github
         public TEntity Single<TEntity>(object key) where TEntity : class, new()
         {
             var filename = key.ToString();
-            var recordPath = Path.Combine(DataPath, typeof(TEntity).Name, filename + ".json");
+            var location = filename;
+            var recordPath = Path.Combine(DataPath, typeof(TEntity).Name, location, filename + ".json");
             var json = File.ReadAllText(recordPath);
             var item = JsonConvert.DeserializeObject<TEntity>(json);
 
@@ -39,7 +40,7 @@ namespace NBlog.Web.Application.Storage.Github
         public IEnumerable<TEntity> All<TEntity>() where TEntity : class, new()
         {
             var folderPath = Path.Combine(DataPath, typeof(TEntity).Name);
-            var filePaths = Directory.GetFiles(folderPath, "*.json", SearchOption.TopDirectoryOnly);
+            var filePaths = Directory.GetFiles(folderPath, "*/*.json", SearchOption.TopDirectoryOnly);
 
             var list = new List<TEntity>();
             foreach (var path in filePaths)

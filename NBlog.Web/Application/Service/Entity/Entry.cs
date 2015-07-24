@@ -52,7 +52,7 @@ namespace NBlog.Web.Application.Service.Entity
 
         private string GetPostContentFromGithub(string slug)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/viktornonov/blog-posts/master/" + slug + ".md");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/viktornonov/blog-posts/master/" + slug + "/" + slug + ".md");
             request.Method = "GET";
             string html = String.Empty;
             using (var reader = new StreamReader(request.GetResponse().GetResponseStream()))
