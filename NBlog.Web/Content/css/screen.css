@@ -66,11 +66,23 @@ a:hover {
 
 #logo {
     margin-top: 1em;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 #logo:hover {
     opacity:0.5;
     filter:alpha(opacity=50);
-    transition: 0.5s;
+    transition: 0.2s;
+}
+
+.social-icon {
+    transition: 0.2s;
+    width: 122px;
+    height: 122px;
+}
+
+.social-icon:hover {
+    opacity:0.5;
+    filter:alpha(opacity=50);
+    transition: 0.2s;
 }
