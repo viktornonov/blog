@@ -77,8 +77,9 @@ a:hover {
 
 .social-icon {
     transition: 0.2s;
-    width: 122px;
-    height: 122px;
+    margin-left: 5px;
+    width: 120px;
+    height: 120px;
 }
 
 .social-icon:hover {

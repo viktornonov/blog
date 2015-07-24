@@ -279,6 +279,7 @@
     <Content Include="Content\img\instagram.png" />
     <Content Include="Content\img\linkedin.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\ornament.png" />
     <Content Include="Content\img\rss.png" />
     <Content Include="Content\img\sunset.jpg" />
     <Content Include="Content\img\twitter.png" />
