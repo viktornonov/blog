@@ -29,7 +29,7 @@ namespace NBlog.Web
             // injection
             FilterProviders.Providers.Remove(FilterProviders.Providers.Single(f => f is FilterAttributeFilterProvider));
 
-            InitialiseJobScheduler(container);
+            //InitialiseJobScheduler(container);
         }
 
         private static ResolvedParameter GetResolvedParameterByName<T>(string key)
@@ -37,16 +37,6 @@ namespace NBlog.Web
             return new ResolvedParameter(
                 (pi, c) => pi.ParameterType == typeof(T),
                 (pi, c) => c.ResolveNamed<T>(key));
-        }
-
-        private static void InitialiseJobScheduler(IContainer container)
-        {
-            // Quartz.NET scheduler
-            ISchedulerFactory factory = new StdSchedulerFactory();
-            var scheduler = factory.GetScheduler();
-            //TODO check the second param
-            scheduler.JobFactory = new AutofacJobFactory(new Autofac.Integration.Mvc.RequestLifetimeScopeProvider(container, null));
-            scheduler.Start();
         }
 
         private static IContainer RegisterDependencies()

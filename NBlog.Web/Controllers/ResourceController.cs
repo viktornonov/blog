@@ -22,8 +22,6 @@ namespace NBlog.Web.Controllers
 
             Bundle.Css()
                 //.Add(Services.Theme.Current.Css("style"))
-                .Add("~/scripts/jqueryopenidplugin/openid.css")
-                .Add("~/scripts/wmd/wmd.css")
                 .Add("~/scripts/prettify/prettify.css")
                 .ForceRelease()
                 .WithMinifier(new MsMinifier())
@@ -40,15 +38,8 @@ namespace NBlog.Web.Controllers
             const string cacheKey = "nblog-js";
 
             Bundle.JavaScript()
-                .Add("~/scripts/wmd/jquery.wmd.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
-                .Add("~/scripts/plugins.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
-                .Add("~/scripts/fancybox/jquery.mousewheel-3.0.4.pack.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
-                .Add("~/scripts/fancybox/jquery.fancybox-1.3.2.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
-                .Add("~/scripts/jQueryOpenIdPlugin/jquery.openid.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
-                .Add("~/scripts/jquery.validate.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
-                .Add("~/scripts/jquery.validate.unobtrusive.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
+                .Add("~/scripts/prism.js")
                 .Add("~/scripts/prettify/prettify.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
-                .Add("~/scripts/jquery.watermark.js").WithMinifier(new JavaScriptMinifiers.NullMinifier())
                 .ForceRelease().WithMinifier(new JavaScriptMinifiers.MsMinifier()).AsCached(cacheKey, "");
 
             var js = Bundle.JavaScript().RenderCached(cacheKey);

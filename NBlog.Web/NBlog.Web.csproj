@@ -72,72 +72,6 @@
     <Reference Include="Common.Logging">
       <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetOpenAuth.Core">
-      <HintPath>..\packages\DotNetOpenAuth.Core.4.3.4.13329\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.Core.UI">
-      <HintPath>..\packages\DotNetOpenAuth.Core.UI.4.3.4.13329\lib\net40-full\DotNetOpenAuth.Core.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.InfoCard">
-      <HintPath>..\packages\DotNetOpenAuth.InfoCard.4.3.4.13329\lib\net40-full\DotNetOpenAuth.InfoCard.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.InfoCard.UI">
-      <HintPath>..\packages\DotNetOpenAuth.InfoCard.UI.4.3.4.13329\lib\net40-full\DotNetOpenAuth.InfoCard.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth.Common">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth.Common.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth.Consumer">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth.ServiceProvider">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth.ServiceProvider.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth.ServiceProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth2">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth2.Core.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth2.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth2.AuthorizationServer">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth2.AuthorizationServer.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth2.AuthorizationServer.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth2.Client">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth2.Client.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth2.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth2.Client.UI">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth2.Client.UI.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth2.Client.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth2.ClientAuthorization">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth2.ClientAuthorization.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth2.ClientAuthorization.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth2.ResourceServer">
-      <HintPath>..\packages\DotNetOpenAuth.OAuth2.ResourceServer.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OAuth2.ResourceServer.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenId">
-      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenId.Provider">
-      <HintPath>..\packages\DotNetOpenAuth.OpenId.Provider.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OpenId.Provider.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenId.Provider.UI">
-      <HintPath>..\packages\DotNetOpenAuth.OpenId.Provider.UI.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OpenId.Provider.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
-      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty.UI">
-      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.UI.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenId.UI">
-      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.UI.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OpenId.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenIdInfoCard.UI">
-      <HintPath>..\packages\DotNetOpenAuth.OpenIdInfoCard.UI.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OpenIdInfoCard.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenIdOAuth">
-      <HintPath>..\packages\DotNetOpenAuth.OpenIdOAuth.4.3.4.13329\lib\net40-full\DotNetOpenAuth.OpenIdOAuth.dll</HintPath>
-    </Reference>
     <Reference Include="DropNet">
       <HintPath>..\packages\DropNet.1.9.5\lib\net40\DropNet.dll</HintPath>
     </Reference>
@@ -285,81 +219,14 @@
     <Content Include="Content\img\twitter.png" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />
-    <Content Include="Scripts\Fancybox\blank.gif" />
-    <Content Include="Scripts\Fancybox\fancybox-x.png" />
-    <Content Include="Scripts\Fancybox\fancybox-y.png" />
-    <Content Include="Scripts\Fancybox\fancybox.png" />
-    <Content Include="Scripts\Fancybox\fancy_close.png" />
-    <Content Include="Scripts\Fancybox\fancy_loading.png" />
-    <Content Include="Scripts\Fancybox\fancy_nav_left.png" />
-    <Content Include="Scripts\Fancybox\fancy_nav_right.png" />
-    <Content Include="Scripts\Fancybox\fancy_shadow_e.png" />
-    <Content Include="Scripts\Fancybox\fancy_shadow_n.png" />
-    <Content Include="Scripts\Fancybox\fancy_shadow_ne.png" />
-    <Content Include="Scripts\Fancybox\fancy_shadow_nw.png" />
-    <Content Include="Scripts\Fancybox\fancy_shadow_s.png" />
-    <Content Include="Scripts\Fancybox\fancy_shadow_se.png" />
-    <Content Include="Scripts\Fancybox\fancy_shadow_sw.png" />
-    <Content Include="Scripts\Fancybox\fancy_shadow_w.png" />
-    <Content Include="Scripts\Fancybox\fancy_title_left.png" />
-    <Content Include="Scripts\Fancybox\fancy_title_main.png" />
-    <Content Include="Scripts\Fancybox\fancy_title_over.png" />
-    <Content Include="Scripts\Fancybox\fancy_title_right.png" />
-    <Content Include="Scripts\Fancybox\jquery.easing-1.3.pack.js" />
-    <Content Include="Scripts\Fancybox\jquery.fancybox-1.3.2.css" />
-    <Content Include="Scripts\Fancybox\jquery.fancybox-1.3.2.js" />
-    <Content Include="Scripts\Fancybox\jquery.fancybox-1.3.2.pack.js" />
-    <Content Include="Scripts\Fancybox\jquery.mousewheel-3.0.4.pack.js" />
     <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="App_Data\localhost\Entry\yo-yo.json" />
     <None Include="Properties\PublishProfiles\ftp.nonov.net.pubxml" />
     <None Include="Properties\PublishProfiles\nonov.net.pubxml" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Jobs.config" />
-    <Content Include="Jobs.Debug.config" />
     <Content Include="App_Data\localhost\Config\settings.json" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
     </Content>
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\jquery.watermark.js" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\aolW.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\blogger.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\claimid.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\facebookW.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\fadegrey.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\flickr.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\flickrW.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\googleB.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\googleW.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\livejournal.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\myopenid.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\myopenidB.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\myopenidW.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\myspaceW.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\openidB.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\openidico.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\openidW.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\technorati.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\verisign.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\vidoop.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\wordpress.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\yahooB.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\images\yahooW.png" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\jquery.openid.js" />
-    <Content Include="Scripts\jQueryOpenIdPlugin\openid.css" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\Prettify\lang-apollo.js" />
     <Content Include="Scripts\Prettify\lang-css.js" />
     <Content Include="Scripts\Prettify\lang-hs.js" />
@@ -381,11 +248,6 @@
     <Content Include="Scripts\Profiling\yahoo-profiling.css" />
     <Content Include="Scripts\Profiling\yahoo-profiling.min.js" />
     <Content Include="Scripts\vendor\modernizr.js" />
-    <Content Include="Scripts\wmd\images\wmd-buttons.png" />
-    <Content Include="Scripts\wmd\jquery-wmd-plugin.js" />
-    <Content Include="Scripts\wmd\jquery.wmd.js" />
-    <Content Include="Scripts\wmd\jquery.wmd.min.js" />
-    <Content Include="Scripts\wmd\wmd.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -421,7 +283,6 @@
     <Compile Include="Application\Storage\RepositoryKeys.cs" />
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EntryController.cs" />
     <Compile Include="Controllers\EntryController.Models.cs" />
