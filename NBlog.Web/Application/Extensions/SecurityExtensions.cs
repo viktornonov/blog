@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace NBlog.Web.Application.Infrastructure
+namespace NBlog.Web.Application.Extensions
 {
     public static class SecurityExtensions
     {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NBlog.Web.Application.Core;
+using NBlog.Web.Application.Extensions;
 using NBlog.Web.Models;
 
 namespace NBlog.Web.Controllers

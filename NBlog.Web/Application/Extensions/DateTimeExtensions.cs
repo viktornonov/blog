@@ -1,6 +1,6 @@
 using System;
 
-namespace NBlog.Web.Application.Infrastructure
+namespace NBlog.Web.Application.Extensions
 {
     public static class DateTimeExtensions
     {

@@ -60,39 +60,11 @@
     <Reference Include="AjaxMin">
       <HintPath>..\packages\AjaxMin.4.48.4489.28432\lib\net20\AjaxMin.dll</HintPath>
     </Reference>
-    <Reference Include="AntiXssLibrary">
-      <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\AntiXssLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging">
-      <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="DropNet">
-      <HintPath>..\packages\DropNet.1.9.5\lib\net40\DropNet.dll</HintPath>
-    </Reference>
-    <Reference Include="EcmaScript.NET">
-      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\EcmaScript.NET.dll</HintPath>
-    </Reference>
-    <Reference Include="Elmah">
-      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlSanitizationLibrary">
+    <Reference Include="HtmlSanitizationLibrary, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Ionic.Zip">
-      <HintPath>..\packages\DotNetZip.1.9.1.8\lib\net20\Ionic.Zip.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
@@ -102,17 +74,8 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Bson">
-      <HintPath>..\packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Bson.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Driver.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Quartz">
-      <HintPath>..\packages\Quartz.2.1.2\lib\net40\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="RazorGenerator.Templating">
       <HintPath>..\packages\RazorGenerator.Templating.2.2.3\lib\net40\RazorGenerator.Templating.dll</HintPath>
@@ -237,13 +200,12 @@
     <Compile Include="Application\Core\BlogRepository.cs" />
     <Compile Include="Application\Core\IEntity.cs" />
     <Compile Include="Application\Core\IRepository.cs" />
-    <Compile Include="Application\Infrastructure\DateTimeExtensions.cs" />
-    <Compile Include="Application\Infrastructure\HtmlExtensions.cs" />
-    <Compile Include="Application\Infrastructure\NoBindingAttribute.cs" />
-    <Compile Include="Application\Infrastructure\RouteExtensions.cs" />
-    <Compile Include="Application\Infrastructure\RssResult.cs" />
-    <Compile Include="Application\Infrastructure\SecurityExtensions.cs" />
-    <Compile Include="Application\Infrastructure\StringExtensions.cs" />
+    <Compile Include="Application\Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Application\Extensions\HtmlExtensions.cs" />
+    <Compile Include="Application\Extensions\RouteExtensions.cs" />
+    <Compile Include="Application\Extensions\RssResult.cs" />
+    <Compile Include="Application\Extensions\SecurityExtensions.cs" />
+    <Compile Include="Application\Extensions\StringExtensions.cs" />
     <Compile Include="Application\MarkdownSharp.cs" />
     <Compile Include="Application\Core\Config.cs" />
     <Compile Include="Models\Entry.cs" />

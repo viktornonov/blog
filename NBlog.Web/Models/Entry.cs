@@ -1,16 +1,14 @@
 ﻿using System;
-using MongoDB.Bson.Serialization.Attributes;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Net;
 using NBlog.Web.Application.Core;
-using NBlog.Web.Application.Infrastructure;
+using NBlog.Web.Application.Extensions;
 
 namespace NBlog.Web.Models
 {
     public class Entry : IEntity
     {
-        [BsonId]
         public string Slug { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
@@ -19,11 +17,8 @@ namespace NBlog.Web.Models
         public string Markdown { get; set; }
         public bool IsPublished { get; set; }
         public bool? IsCodePrettified { get; set; }
-
         public string Html { get; set; }
-
         public string Date { get; set; }
-
         public string HtmlByMarkdown
         {
             get
@@ -55,7 +50,6 @@ namespace NBlog.Web.Models
         {
             return Title;
         }
-
         private string GetPostContentFromGithub(string slug)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/viktornonov/blog-posts/master/" + slug + "/" + slug + ".md");

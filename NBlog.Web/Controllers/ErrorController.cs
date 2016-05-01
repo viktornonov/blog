@@ -1,4 +1,4 @@
-﻿using NBlog.Web.Application.Infrastructure;
+﻿using NBlog.Web.Application.Extensions;
 using NBlog.Web.Models;
 using System.Web;
 using System.Web.Mvc;

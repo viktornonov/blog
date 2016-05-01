@@ -1,4 +1,4 @@
-﻿using NBlog.Web.Application.Infrastructure;
+﻿using NBlog.Web.Application.Extensions;
 
 namespace NBlog.Web.Models
 {

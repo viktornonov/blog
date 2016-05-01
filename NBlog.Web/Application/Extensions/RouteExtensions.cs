@@ -2,7 +2,7 @@ using System;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace NBlog.Web.Application.Infrastructure
+namespace NBlog.Web.Application.Extensions
 {
     public static class RouteCollectionExtensions
     {

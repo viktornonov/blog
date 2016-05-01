@@ -3,10 +3,14 @@
 {
     <div class="row">
         <div class="columns">
-            @*<h3 class="left">@Html.ActionLink(entry.Title, "Show", "Entry", new { id = entry.Slug }, null)</h3>*@
-           <h3 class="left">@entry.Title @entry.Slug</h3>
+            @* extension methods does not work with dynamic shit (http://stackoverflow.com/questions/19255688/why-is-extension-method-not-found-in-mvc4-razor-view)*@
+            @{
+                string title = entry.Title.ToString();
+                string slug = entry.Slug.ToString();
+            }
+            <h3 class="left">@Html.ActionLink(title, "Show", "Entry", new { id = slug }, null)</h3>
             <div class="right post-date main-page-date">
-                @entry.DateCreated.ToPrettyDate()
+                @DateTimeExtensions.ToPrettyDate(@entry.DateCreated)
             </div>
         </div>
     </div>

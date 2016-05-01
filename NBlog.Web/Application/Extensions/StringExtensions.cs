@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace NBlog.Web.Application.Infrastructure
+namespace NBlog.Web.Application.Extensions
 {
     public static class StringExtensions
     {

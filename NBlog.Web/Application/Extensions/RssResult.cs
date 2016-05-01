@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Xml;
 
-namespace NBlog.Web.Application.Infrastructure
+namespace NBlog.Web.Application.Extensions
 {
     public class RssResult : ActionResult
     {

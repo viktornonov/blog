@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
-using NBlog.Web.Application.Infrastructure;
+using NBlog.Web.Application.Extensions;
 using NBlog.Web.Models;
 using NBlog.Web.Application.Core;
 

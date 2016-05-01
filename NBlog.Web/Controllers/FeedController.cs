@@ -4,7 +4,7 @@ using System.ServiceModel.Syndication;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
-using NBlog.Web.Application.Infrastructure;
+using NBlog.Web.Application.Extensions;
 using NBlog.Web.Application.Core;
 using NBlog.Web.Models;
 using Newtonsoft.Json;
