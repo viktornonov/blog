@@ -46,7 +46,6 @@ namespace NBlog.Web
             var repositoryKeys = new RepositoryKeys();
             repositoryKeys.Add<Entry>(e => e.Slug);
             repositoryKeys.Add<Config>(c => c.Site);
-            repositoryKeys.Add<User>(u => u.Username);
 
             builder.RegisterType<JsonRepository>().Named<IRepository>("json").InstancePerLifetimeScope().WithParameters(new[] {
                 new NamedParameter("keys", repositoryKeys)
@@ -61,7 +60,6 @@ namespace NBlog.Web
             builder.RegisterType<EntryService>().As<IEntryService>().InstancePerLifetimeScope()
                 .WithParameter(GetResolvedParameterByName<IRepository>(DefaultRepositoryName));
 
-            builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
             builder.RegisterType<MessageService>().As<IMessageService>().InstancePerLifetimeScope();
             builder.RegisterType<Services>().As<IServices>().InstancePerLifetimeScope();
 

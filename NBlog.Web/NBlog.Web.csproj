@@ -224,9 +224,6 @@
     <None Include="Properties\PublishProfiles\ftp.nonov.net.pubxml" />
     <None Include="Properties\PublishProfiles\nonov.net.pubxml" />
     <Content Include="App_Data\localhost\Config\settings.json" />
-    <Content Include="SampleTemplate.cshtml">
-      <Generator>RazorGenerator</Generator>
-    </Content>
     <Content Include="Scripts\Prettify\lang-apollo.js" />
     <Content Include="Scripts\Prettify\lang-css.js" />
     <Content Include="Scripts\Prettify\lang-hs.js" />
@@ -251,7 +248,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\Infrastructure\AdminOnlyAttribute.cs" />
     <Compile Include="Application\Infrastructure\AutofacJobFactory.cs" />
     <Compile Include="Application\Infrastructure\BuildNumberProvider.cs" />
     <Compile Include="Application\Infrastructure\DateExtensions.cs" />
@@ -266,16 +262,13 @@
     <Compile Include="Application\MarkdownSharp.cs" />
     <Compile Include="Application\Service\Entity\Config.cs" />
     <Compile Include="Application\Service\Entity\Entry.cs" />
-    <Compile Include="Application\Service\Entity\User.cs" />
     <Compile Include="Application\Service\IConfigService.cs" />
     <Compile Include="Application\Service\IEntryService.cs" />
     <Compile Include="Application\Service\Internal\ConfigService.cs" />
     <Compile Include="Application\Service\Internal\EntryService.cs" />
     <Compile Include="Application\Service\Internal\MessageService.cs" />
     <Compile Include="Application\Service\Internal\Services.cs" />
-    <Compile Include="Application\Service\Internal\UserService.cs" />
     <Compile Include="Application\Service\IServices.cs" />
-    <Compile Include="Application\Service\IUserService.cs" />
     <Compile Include="Application\Service\MessageService.cs" />
     <Compile Include="Application\Storage\Github\GithubRepository.cs" />
     <Compile Include="Application\Storage\IRepository.cs" />
@@ -304,11 +297,8 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\Contact\Confirm.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Entry\Delete.cshtml" />
-    <Content Include="Views\Entry\Edit.cshtml" />
     <Content Include="Views\Entry\Show.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />

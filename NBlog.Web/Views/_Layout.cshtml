@@ -67,15 +67,6 @@
                         Contact
                 </a>
                 -->
-                <div id="topbar">
-                    <div id="links" class="text-links">
-                        @(Model.User.IsAuthenticated ? Html.Safe("<strong>" + Model.User.FriendlyName + "</strong> |") : Html.Blank())
-                        @if (Model.User.IsAuthenticated)
-                        {
-                            Html.ActionLink("Sign Out", "Logout", "Authentication");
-                        }
-                    </div>
-                </div>
            </div>
         </div>
 

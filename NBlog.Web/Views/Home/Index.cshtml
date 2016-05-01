@@ -1,18 +1,8 @@
 ﻿@model HomeController.IndexModel
 
-    @if (Model.User.IsAdmin)
-    {
-        <div class="admin-box text-links">
-            Admin:
-            @Html.ActionLink("New Post", "Add", "Entry")
-        </div>
-    }
-
     <article class="post">
-        
     @foreach (var entry in Model.Entries)
     {
-        if (!Model.User.IsAdmin && !entry.IsPublished) { continue; }
         <div class="row">
             <div class="columns">
                 <h3 class="left">@Html.ActionLink(entry.Title, "Show", "Entry", new { id = entry.Slug }, null)</h3>

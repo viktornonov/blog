@@ -8,12 +8,10 @@ namespace NBlog.Web.Application.Service.Internal
 {
     public class EntryService : IEntryService
     {
-        private readonly IUserService _userService;
         private readonly IRepository _repository;
 
-        public EntryService(IUserService userService, IRepository repository)
+        public EntryService(IRepository repository)
         {
-            _userService = userService;
             _repository = repository;
         }
 
@@ -37,8 +35,6 @@ namespace NBlog.Web.Application.Service.Internal
                     entry.DateCreated = DateTime.Now;
                 }
             }
-
-            entry.Author = _userService.Current.FriendlyName;
 
             _repository.Save(entry);
         }

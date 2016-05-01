@@ -7,8 +7,8 @@ namespace NBlog.Web.Application.Infrastructure
         //[NoBinding]
         //public LayoutCommonModel Common { get; set; }
         
-        [NoBinding]
-        public User User { get; set; }
+//        [NoBinding]
+//        public User User { get; set; }
         
         [NoBinding]
         public Config Config { get; set; }

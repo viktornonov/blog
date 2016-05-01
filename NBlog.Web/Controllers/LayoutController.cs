@@ -33,7 +33,6 @@ namespace NBlog.Web.Application.Infrastructure
         private void InitialiseBaseViewModel(LayoutModel model)
         {
             model.Config = Services.Config.Current;
-            model.User = Services.User.Current;
             
             //model.Base = new LayoutModel.LayoutCommonModel
             //{

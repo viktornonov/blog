@@ -4,15 +4,6 @@
 }
 
 <article class="post">
-    @if (Model.User.IsAdmin)
-    {
-        <div class="admin-box text-links">
-            Admin:
-            @Html.ActionLink("Edit", "Edit", "Entry", new { id = Model.Slug }, null) |
-            @Html.ActionLink("Delete", "Delete", "Entry", new { id = Model.Slug }, null)
-        </div>
-    }
-    
     <h1>@Model.Title</h1>
     
     <div class="post-date">
