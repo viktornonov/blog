@@ -249,7 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Infrastructure\AutofacJobFactory.cs" />
-    <Compile Include="Application\Infrastructure\BuildNumberProvider.cs" />
     <Compile Include="Application\Infrastructure\DateExtensions.cs" />
     <Compile Include="Application\Infrastructure\HtmlExtensions.cs" />
     <Compile Include="Controllers\LayoutController.cs" />

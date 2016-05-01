@@ -7,8 +7,6 @@ namespace NBlog.Web.Application.Service.Entity
     {
         public List<string> Admins { get; set; }
 
-        public CloudConfig Cloud { get; set; }
-
         public ContactFormConfig ContactForm { get; set; }
 
         public string Crossbar { get; set; }
@@ -28,19 +26,6 @@ namespace NBlog.Web.Application.Service.Entity
         public string Theme { get; set; }
 
         public string Title { get; set; }
-
-        public string TwitterUsername { get; set; }
-
-        public class CloudConfig
-        {
-            public string ConsumerKey { get; set; }
-
-            public string ConsumerSecret { get; set; }
-
-            public string UserSecret { get; set; }
-
-            public string UserToken { get; set; }
-        }
 
         public class ContactFormConfig
         {
