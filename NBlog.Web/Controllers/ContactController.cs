@@ -6,9 +6,13 @@ using System.Web.Mvc;
 
 namespace NBlog.Web.Controllers
 {
-    public partial class ContactController : LayoutController
+    public partial class ContactController : Controller
     {
-        public ContactController(IServices services) : base(services) { }
+        protected readonly IServices Services;
+
+        public ContactController(IServices services) {
+            Services = services;
+        }
 
         [HttpGet]
         public ActionResult Index()

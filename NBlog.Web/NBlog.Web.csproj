@@ -251,8 +251,6 @@
     <Compile Include="Application\Infrastructure\AutofacJobFactory.cs" />
     <Compile Include="Application\Infrastructure\DateExtensions.cs" />
     <Compile Include="Application\Infrastructure\HtmlExtensions.cs" />
-    <Compile Include="Controllers\LayoutController.cs" />
-    <Compile Include="Models\LayoutModel.cs" />
     <Compile Include="Application\Infrastructure\NoBindingAttribute.cs" />
     <Compile Include="Application\Infrastructure\RouteExtensions.cs" />
     <Compile Include="Application\Infrastructure\RssResult.cs" />
@@ -260,7 +258,7 @@
     <Compile Include="Application\Infrastructure\StringExtensions.cs" />
     <Compile Include="Application\MarkdownSharp.cs" />
     <Compile Include="Application\Service\Entity\Config.cs" />
-    <Compile Include="Application\Service\Entity\Entry.cs" />
+    <Compile Include="Models\Entry.cs" />
     <Compile Include="Application\Service\IConfigService.cs" />
     <Compile Include="Application\Service\IEntryService.cs" />
     <Compile Include="Application\Service\Internal\ConfigService.cs" />
@@ -277,19 +275,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EntryController.cs" />
-    <Compile Include="Controllers\EntryController.Models.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
-    <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Controllers\SearchController.Models.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Error.cs" />
-    <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -301,7 +295,6 @@
     <Content Include="Views\Entry\Show.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>

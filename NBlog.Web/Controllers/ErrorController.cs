@@ -7,9 +7,9 @@ using System.Web.Routing;
 
 namespace NBlog.Web.Controllers
 {
-    public partial class ErrorController : LayoutController
+    public partial class ErrorController : Controller
     {
-        public ErrorController(IServices services) : base(services) { }
+        public ErrorController(IServices services) { }
 
         public ActionResult Index()
         {

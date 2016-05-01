@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NBlog.Web.Application.Service.Entity;
+using NBlog.Web.Models;
 
 namespace NBlog.Web.Application.Service
 {

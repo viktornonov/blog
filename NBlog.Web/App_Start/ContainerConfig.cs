@@ -4,6 +4,7 @@ using Autofac.Integration.Mvc;
 using NBlog.Web.Application.Infrastructure;
 using NBlog.Web.Application.Service;
 using NBlog.Web.Application.Service.Entity;
+using NBlog.Web.Models;
 using NBlog.Web.Application.Service.Internal;
 using NBlog.Web.Application.Storage;
 using NBlog.Web.Application.Storage.Json;

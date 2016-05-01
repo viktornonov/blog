@@ -30,7 +30,6 @@ namespace NBlog.Tests
             Keys = new RepositoryKeys();
             Keys.Add<Entry>(e => e.Slug);
             Keys.Add<Config>(c => c.Site);
-            Keys.Add<User>(u => u.Username);
 
             JsonWorkingFolder = Path.Combine(Path.GetTempPath(), "NBlogIntegrationTests");
         }

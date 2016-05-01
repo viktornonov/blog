@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NBlog.Web.Application.Service.Entity;
 using NBlog.Web.Application.Storage;
+using NBlog.Web.Models;
 
 namespace NBlog.Web.Application.Service.Internal
 {

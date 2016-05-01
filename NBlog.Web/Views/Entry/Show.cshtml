@@ -1,6 +1,6 @@
-﻿@model EntryController.ShowModel
+﻿@model Entry
 @{
-    ViewBag.Title = Model.Title + " | " + Model.Config.Heading;
+    ViewBag.Title = Model.Title;
 }
 
 <article class="post">
@@ -20,13 +20,13 @@
         </div>
     </div>
 
-    @if (!string.IsNullOrWhiteSpace(@Model.Config.Disqus.Shortname))
+    @if (!string.IsNullOrWhiteSpace(@ViewBag.Config.Disqus.Shortname))
     {
     <div id="disqus_thread"></div>
     <script type="text/javascript">
 
-        var disqus_shortname = '@Model.Config.Disqus.Shortname';
-        var disqus_developer = @(Model.Config.Disqus.DevelopmentMode ? "1" : "0");
+        var disqus_shortname = '@ViewBag.Config.Disqus.Shortname';
+        var disqus_developer = @(ViewBag.Config.Disqus.DevelopmentMode ? "1" : "0");
         var disqus_identifier = '@Model.Slug';
         var disqus_title = '@Model.Title';
 
@@ -44,9 +44,9 @@
 </article>
 
 @section Scripts {
-    @if (Model.IsCodePrettified)
+    @if (Model.IsCodePrettified == true)
     {
-    <script>
+        <script>
         $(function () {
             // prettyPrint();
         });

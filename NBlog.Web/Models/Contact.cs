@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NBlog.Web.Models
 {
-    public class Contact : LayoutModel
+    public class Contact
     {
             [DisplayName("Your name")]
             [Required(ErrorMessage = "Please enter your name.")]

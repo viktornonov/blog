@@ -1,5 +1,4 @@
 ﻿@using System.Reflection
-@model NBlog.Web.Application.Infrastructure.LayoutModel
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -13,9 +12,9 @@
     <script type="text/javascript" src="//use.typekit.net/qeg0jod.js"></script>
     <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 
-	<title>@(ViewBag.Title ?? Model.Config.Title)</title>
-    <meta name="description" content="@Model.Config.MetaDescription">
-    <link href="@Url.Action("Index", "Feed")" rel="alternate" type="application/rss+xml" title="@Model.Config.Title" />
+	<title>@(ViewBag.Title ?? ViewBag.Config.Title)</title>
+    <meta name="description" content="@ViewBag.Config.MetaDescription">
+    <link href="@Url.Action("Index", "Feed")" rel="alternate" type="application/rss+xml" title="@ViewBag.Config.Title" />
 	<link rel="shortcut icon" href="@Url.Content("~/Content/img/logo.png")">
     <link rel="stylesheet" href="@Url.Content("~/Content/css/foundation.css")"/>
     <link rel="stylesheet" href="@Url.Content("~/Content/css/normalize.css")"/>
@@ -109,7 +108,7 @@
     @*<script src="/resources/scripts/profiling/yahoo-profiling.min.js?v=1"></script>
       <script src="/resources/scripts/profiling/config.js?v=1"></script>*@
 
-    @if (!string.IsNullOrWhiteSpace(Model.Config.GoogleAnalyticsId))
+    @if (!string.IsNullOrWhiteSpace(ViewBag.Config.GoogleAnalyticsId))
     {
         <script>
             (function (i, s, o, g, r, a, m) {

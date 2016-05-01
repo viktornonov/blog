@@ -8,10 +8,9 @@ using JavaScriptMinifiers = SquishIt.Framework.Minifiers.JavaScript;
 
 namespace NBlog.Web.Controllers
 {
-    public class ResourceController : LayoutController
+    public class ResourceController : Controller
     {
-        public ResourceController(IServices services)
-            : base(services)
+        public ResourceController()
         {
         }
 

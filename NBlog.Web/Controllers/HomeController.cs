@@ -7,57 +7,45 @@ using NBlog.Web.Application;
 using NBlog.Web.Application.Infrastructure;
 using NBlog.Web.Application.Service;
 using NBlog.Web.Application.Service.Entity;
+using NBlog.Web.Models;
 
 namespace NBlog.Web.Controllers
 {
-    public partial class HomeController : LayoutController
+    public partial class HomeController : Controller
     {
-        public HomeController(IServices services) : base(services) { }
+        protected readonly IServices Services;
+
+        public HomeController(IServices services)
+        {
+            Services = services;
+        }
 
         [HttpGet]
         public ViewResult Index()
         {
             var entries = Services.Entry.GetList();
 
-            var model = new IndexModel
-            {
-                Entries = entries
-                    .OrderByDescending(e => e.DateCreated)
-                    .Select(e => new Entry
-                    {
-                        Slug = e.Slug,
-                        Markdown = e.HtmlByMarkdown,
-                        Title = e.Title,
-                        IsFromGithub = e.IsFromGithub,
-                        DateCreated = e.DateCreated,
-                        IsPublished = e.IsPublished
-                    })
-            };
+            ViewBag.Entries = entries
+                                .OrderByDescending(e => e.DateCreated)
+                                .Select(e => new Entry
+                                {
+                                    Slug = e.Slug,
+                                    Markdown = e.HtmlByMarkdown,
+                                    Title = e.Title,
+                                    IsFromGithub = e.IsFromGithub,
+                                    DateCreated = e.DateCreated,
+                                    IsPublished = e.IsPublished
+                                });
 
-            return View(model);
+            ViewBag.Config = Services.Config.Current;
+
+            return View();
         }
 
         [HttpGet]
         public ViewResult Throw()
         {
             throw new NotImplementedException("Example exception for testing error handling.");
-        }
-
-        [HttpGet]
-        public ActionResult WhoAmI()
-        {
-            return Content(User.Identity.Name.AsNullIfEmpty() ?? "Not logged in");
-        }
-
-        [HttpGet]
-        public ActionResult WhatTimeIsIt()
-        {
-            return Content(DateTime.Now.ToString());
-        }
-        
-        public class IndexModel : LayoutModel
-        {
-            public IEnumerable<Entry> Entries { get; set; }
         }
     }
 }
