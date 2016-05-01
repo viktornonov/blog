@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using MbUnit.Framework;
-using NBlog.Web.Application.Service;
-using NBlog.Web.Application.Service.Entity;
 using NBlog.Web.Controllers;
 using NSubstitute;
 

@@ -1,26 +1,46 @@
-﻿using NBlog.Web.Application.Infrastructure;
-using NBlog.Web.Application.Service;
-using NBlog.Web.Models;
+﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Text.RegularExpressions;
-using System.Threading;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
+using NBlog.Web.Application.Core;
+using NBlog.Web.Models;
 
 namespace NBlog.Web.Controllers
 {
     public partial class EntryController : Controller
     {
-        protected readonly IServices Services;
+        protected readonly Config configOptions;
+        protected readonly BlogRepository<Entry> blogRepository;
 
-        public EntryController(IServices services)
+        public EntryController()
         {
-            Services = services;
+            blogRepository = new BlogRepository<Entry>();
+            var config = new NBlog.Web.Application.Core.Config();
+            var jsonString = System.IO.File.ReadAllText(Config.path);
+            configOptions = JsonConvert.DeserializeObject<Config>(jsonString);
+        }
+
+        [HttpGet]
+        public ViewResult Index()
+        {
+            var entries = blogRepository.GetList();
+
+            ViewBag.Entries = entries
+                                .OrderByDescending(e => e.DateCreated)
+                                .Select(e => new Entry
+                                {
+                                    Slug = e.Slug,
+                                    Markdown = e.HtmlByMarkdown,
+                                    Title = e.Title,
+                                    IsFromGithub = e.IsFromGithub,
+                                    DateCreated = e.DateCreated,
+                                    IsPublished = e.IsPublished
+                                });
+
+            ViewBag.Config = configOptions;
+
+            return View();
         }
 
         [HttpGet]
@@ -32,7 +52,7 @@ namespace NBlog.Web.Controllers
             Entry entry;
             try
             {
-                entry = Services.Entry.GetBySlug(slug);
+                entry = blogRepository.GetBySlug(slug);
             }
             catch (Exception ex)
             {
@@ -49,8 +69,7 @@ namespace NBlog.Web.Controllers
                 Html = html,
                 IsCodePrettified = entry.IsCodePrettified ?? true
             };
-//            model.Config = Services.Config.Current;
-            ViewBag.Config = Services.Config.Current;
+            ViewBag.Config = configOptions;
 
             return View(model);
         }

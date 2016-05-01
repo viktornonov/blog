@@ -2,7 +2,7 @@ using System;
 
 namespace NBlog.Web.Application.Infrastructure
 {
-    public static class DateExtensions
+    public static class DateTimeExtensions
     {
         public static string ToPrettyDate(this DateTime date)
         {

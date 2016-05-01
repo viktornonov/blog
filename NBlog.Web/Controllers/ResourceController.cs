@@ -1,6 +1,5 @@
 ﻿using NBlog.Web.Application;
 using NBlog.Web.Application.Infrastructure;
-using NBlog.Web.Application.Service;
 using SquishIt.Framework;
 using SquishIt.Framework.Minifiers.CSS;
 using System.Web.Mvc;

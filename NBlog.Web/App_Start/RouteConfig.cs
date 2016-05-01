@@ -15,9 +15,10 @@ namespace NBlog.Web
 //            routes.LowercaseUrls = true;
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.ico");
 
             // homepage
-            routes.MapRoute("", "", new { controller = "Home", action = "Index" });
+            routes.MapRoute("", "", new { controller = "Entry", action = "Index" });
 
             // combined scripts
             routes.MapRoute("", "min.css", new { controller = "Resource", action = "Css" });
@@ -25,12 +26,6 @@ namespace NBlog.Web
 
             // feed
             routes.MapRoute("", "feed", new { controller = "Feed", action = "Index" });
-
-            // search
-            routes.MapRoute("", "search", new { controller = "Search", action = "Index" });
-
-            // search
-            routes.MapRoute("", "contact", new { controller = "Contact", action = "Index" });
 
             // entry pages
             routes.MapRoute("", "{id}", new { controller = "Entry", action = "Show" });

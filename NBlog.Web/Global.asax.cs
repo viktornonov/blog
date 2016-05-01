@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using NBlog.Web.Application.Infrastructure;
+using NBlog.Web.Models;
+using NBlog.Web.Application.Core;
 
 namespace NBlog.Web
 {
@@ -15,7 +18,8 @@ namespace NBlog.Web
         {
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            ContainerConfig.SetUpContainer();
+            var blogRepository = new BlogRepository<Entry>();
+            //ContainerConfig.SetUpContainer();
         }
 
         private void Application_End(object sender, EventArgs e)

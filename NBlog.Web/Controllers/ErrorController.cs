@@ -1,5 +1,4 @@
 ﻿using NBlog.Web.Application.Infrastructure;
-using NBlog.Web.Application.Service;
 using NBlog.Web.Models;
 using System.Web;
 using System.Web.Mvc;
@@ -9,7 +8,7 @@ namespace NBlog.Web.Controllers
 {
     public partial class ErrorController : Controller
     {
-        public ErrorController(IServices services) { }
+        public ErrorController() { }
 
         public ActionResult Index()
         {

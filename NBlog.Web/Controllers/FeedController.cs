@@ -5,27 +5,32 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using NBlog.Web.Application.Infrastructure;
-using NBlog.Web.Application.Service;
+using NBlog.Web.Application.Core;
+using NBlog.Web.Models;
+using Newtonsoft.Json;
 
 namespace NBlog.Web.Controllers
 {
     public class FeedController : Controller
     {
-        private readonly IServices _services;
         private static readonly Regex _linkRegex = new Regex(@"(?<=\[[^\]]*\]\()(?<url>[^\)]*)(?=\))");
 
-        public FeedController(IServices services)
+        public FeedController()
         {
-            _services = services;
         }
 
         public ActionResult Index()
         {
+            var blogRepository = new BlogRepository<Entry>();
+            var config = new NBlog.Web.Application.Core.Config();
+            var jsonString = System.IO.File.ReadAllText(Config.path);
+            var configOptions = JsonConvert.DeserializeObject<Config>(jsonString);
+
             var markdown = new MarkdownSharp.Markdown();
             var baseUri = new Uri(Request.Url.GetLeftPart(UriPartial.Authority));
             
             var entries =
-                _services.Entry.GetList()
+                blogRepository.GetList()
                 .Where(e => e.IsPublished)
                 .OrderByDescending(e => e.DateCreated)
                 .Take(10)
@@ -35,8 +40,8 @@ namespace NBlog.Web.Controllers
                     new Uri(baseUri, Url.Action("Show", "Entry", new { id = e.Slug }, null))));
 
             var feed = new SyndicationFeed(
-                title: _services.Config.Current.Heading,
-                description: _services.Config.Current.Tagline,
+                title: configOptions.Heading,
+                description: configOptions.Tagline,
                 feedAlternateLink: new Uri(baseUri, Url.Action("Index", "Feed")),
                 items: entries);
 

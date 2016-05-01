@@ -1,0 +1,14 @@
+﻿<article class="post">
+@foreach (var entry in ViewBag.Entries)
+{
+    <div class="row">
+        <div class="columns">
+            @*<h3 class="left">@Html.ActionLink(entry.Title, "Show", "Entry", new { id = entry.Slug }, null)</h3>*@
+           <h3 class="left">@entry.Title @entry.Slug</h3>
+            <div class="right post-date main-page-date">
+                @entry.DateCreated.ToPrettyDate()
+            </div>
+        </div>
+    </div>
+}
+</article>

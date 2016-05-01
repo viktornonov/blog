@@ -1,7 +1,6 @@
 using MbUnit.Framework;
 using MongoDB.Driver;
 using NBlog.Web.Application.Infrastructure;
-using NBlog.Web.Application.Service.Entity;
 using NBlog.Web.Application.Storage;
 using NBlog.Web.Application.Storage.Json;
 using System;

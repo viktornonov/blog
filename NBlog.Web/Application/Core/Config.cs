@@ -1,10 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
+using System.Web;
 
-namespace NBlog.Web.Application.Service.Entity
+namespace NBlog.Web.Application.Core
 {
     public class Config
     {
+        public static string path = HttpContext.Current.Server.MapPath("~/App_Data/localhost/Config/settings.json");
+
         public List<string> Admins { get; set; }
 
         public ContactFormConfig ContactForm { get; set; }

@@ -63,12 +63,6 @@
     <Reference Include="AntiXssLibrary">
       <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\AntiXssLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Integration.Mvc">
-      <HintPath>..\packages\Autofac.Mvc3.2.6.3.862\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="Common.Logging">
       <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
@@ -107,14 +101,6 @@
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.0-rc\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Bson.dll</HintPath>
@@ -248,8 +234,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\Infrastructure\AutofacJobFactory.cs" />
-    <Compile Include="Application\Infrastructure\DateExtensions.cs" />
+    <Compile Include="Application\Core\BlogRepository.cs" />
+    <Compile Include="Application\Core\IEntity.cs" />
+    <Compile Include="Application\Core\IRepository.cs" />
+    <Compile Include="Application\Infrastructure\DateTimeExtensions.cs" />
     <Compile Include="Application\Infrastructure\HtmlExtensions.cs" />
     <Compile Include="Application\Infrastructure\NoBindingAttribute.cs" />
     <Compile Include="Application\Infrastructure\RouteExtensions.cs" />
@@ -257,32 +245,16 @@
     <Compile Include="Application\Infrastructure\SecurityExtensions.cs" />
     <Compile Include="Application\Infrastructure\StringExtensions.cs" />
     <Compile Include="Application\MarkdownSharp.cs" />
-    <Compile Include="Application\Service\Entity\Config.cs" />
+    <Compile Include="Application\Core\Config.cs" />
     <Compile Include="Models\Entry.cs" />
-    <Compile Include="Application\Service\IConfigService.cs" />
-    <Compile Include="Application\Service\IEntryService.cs" />
-    <Compile Include="Application\Service\Internal\ConfigService.cs" />
-    <Compile Include="Application\Service\Internal\EntryService.cs" />
-    <Compile Include="Application\Service\Internal\MessageService.cs" />
-    <Compile Include="Application\Service\Internal\Services.cs" />
-    <Compile Include="Application\Service\IServices.cs" />
-    <Compile Include="Application\Service\MessageService.cs" />
-    <Compile Include="Application\Storage\Github\GithubRepository.cs" />
-    <Compile Include="Application\Storage\IRepository.cs" />
-    <Compile Include="Application\Storage\Json\JsonRepository.cs" />
-    <Compile Include="Application\Storage\RepositoryKeys.cs" />
-    <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EntryController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FeedController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -290,11 +262,9 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Contact\Confirm.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Entry\Show.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Entry\Index.cshtml" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>

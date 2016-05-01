@@ -3,10 +3,12 @@ using MongoDB.Bson.Serialization.Attributes;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Net;
+using NBlog.Web.Application.Core;
+using NBlog.Web.Application.Infrastructure;
 
 namespace NBlog.Web.Models
 {
-    public class Entry
+    public class Entry : IEntity
     {
         [BsonId]
         public string Slug { get; set; }
@@ -19,6 +21,7 @@ namespace NBlog.Web.Models
         public bool? IsCodePrettified { get; set; }
 
         public string Html { get; set; }
+
         public string Date { get; set; }
 
         public string HtmlByMarkdown
